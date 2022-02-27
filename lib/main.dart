@@ -44,10 +44,19 @@ class MyApp extends StatelessWidget {
         body: IntroductionScreen(
           done: const Text('Вперед', style: TextStyle(color: Colors.red)),
           onDone: () {},
+          onSkip: () {},
           pages: getPages(),
           next: const Text('Далее'),
           showSkipButton: true,
           skip: const Text('Пропустить'),
+          dotsDecorator: DotsDecorator(
+              size: const Size.square(10.0),
+              activeSize: const Size(20.0, 10.0),
+              activeColor: Theme.of(context).colorScheme.secondary,
+              color: const Color(0xffE4E4E4),
+              spacing: const EdgeInsets.symmetric(horizontal: 3.0),
+              activeShape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25.0))),
         ),
       ),
     );
