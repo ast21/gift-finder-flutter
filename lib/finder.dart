@@ -9,7 +9,7 @@ class Finder extends StatefulWidget {
 
 class _FinderState extends State<Finder> {
   var _gender = 'M';
-  RangeValues _PriceValues = const RangeValues(501, 10000);
+  RangeValues _priceValues = const RangeValues(501, 10000);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class _FinderState extends State<Finder> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text('Кому дарим подарок?'),
+                const Text('Кому дарим подарок?'),
                 Row(
                   children: [
                     Expanded(
@@ -67,17 +67,17 @@ class _FinderState extends State<Finder> {
                   ],
                 ),
                 RangeSlider(
-                  values: _PriceValues,
+                  values: _priceValues,
                   max: 10000,
                   min: 500,
                   divisions: 19,
                   labels: RangeLabels(
-                    _PriceValues.start.round().toString(),
-                    _PriceValues.end.round().toString(),
+                    _priceValues.start.round().toString(),
+                    _priceValues.end.round().toString(),
                   ),
                   onChanged: (RangeValues values) {
                     setState(() {
-                      _PriceValues = values;
+                      _priceValues = values;
                     });
                   },
                 ),
