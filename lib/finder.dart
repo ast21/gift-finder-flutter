@@ -1,5 +1,16 @@
 import 'package:flutter/material.dart';
 
+class Label extends StatelessWidget {
+  const Label(this.text, {Key? key}) : super(key: key);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(padding: const EdgeInsets.only(top: 16), child: Text(text));
+  }
+}
+
 class Finder extends StatefulWidget {
   const Finder({Key? key}) : super(key: key);
 
