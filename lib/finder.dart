@@ -170,7 +170,7 @@ class _FinderState extends State<Finder> {
               padding: const EdgeInsets.only(top: 150, bottom: 40),
               child: ElevatedButton(
                 onPressed: () {},
-                style: ElevatedButton.styleFrom(minimumSize: Size.fromHeight(40)),
+                style: ElevatedButton.styleFrom(minimumSize: const Size.fromHeight(40)),
                 child: const Text('Показать подарки'),
               ))
         ]),
