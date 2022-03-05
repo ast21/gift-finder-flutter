@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
       },
       title: 'Gift Finder',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          colorScheme: ColorScheme.fromSwatch().copyWith(primary: const Color.fromRGBO(216, 22, 22, 1)),
+          toggleableActiveColor: const Color.fromRGBO(216, 22, 22, 1)),
       home: const Intro(),
     );
   }
