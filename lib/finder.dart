@@ -133,7 +133,53 @@ class _FinderState extends State<Finder> {
           const Label('Возраст'),
           const Input('18'),
           const Label('Хобби'),
-          const Input('Выберите хобби'),
+          ElevatedButton(
+              child: const Align(
+                alignment: Alignment.centerLeft,
+                child: Text('Выберите хобби'),
+              ),
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size.fromHeight(40),
+                primary: Colors.white54,
+                onPrimary: Colors.black54,
+                shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
+                side: const BorderSide(
+                  width: 1.0,
+                  color: Colors.black54,
+                  style: BorderStyle.solid,
+                ),
+                elevation: 0.0,
+                shadowColor: Colors.transparent,
+                textStyle: const TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
+              ),
+              onPressed: () {
+                showModalBottomSheet(
+                  shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(25))),
+                  backgroundColor: Colors.white,
+                  isScrollControlled: true,
+                  context: context,
+                  builder: (context) => Wrap(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.only(top: 8, right: 16, bottom: 8, left: 16),
+                        child: TextFormField(
+                          cursorColor: Theme.of(context).cursorColor,
+                          // maxLength: 20,
+                          decoration: const InputDecoration(
+                            hintText: 'Найти',
+                            suffixIcon: Icon(Icons.search),
+                          ),
+                        ),
+                      ),
+                      const ListTile(leading: Icon(Icons.edit), title: Text('Edit name')),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+                        child: const ListTile(leading: Icon(Icons.delete), title: Text('Delete')),
+                      )
+                    ],
+                  ),
+                );
+              }),
           const Label('Цена'),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
